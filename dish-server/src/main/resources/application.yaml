@@ -1,0 +1,23 @@
+server:
+  port: 8091
+
+eureka:
+  client:
+    server-url:
+      default-zone: http://localhost:8761/eureka
+
+logstash:
+  host: localhost
+
+spring:
+  application:
+    name: dish-server
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: password
+      database: dish
+      port: 27017
+      host: localhost
+      auto-index-creation: true
