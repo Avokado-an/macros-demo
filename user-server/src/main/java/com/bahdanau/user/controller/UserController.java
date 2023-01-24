@@ -1,6 +1,7 @@
 package com.bahdanau.user.controller;
 
 import com.bahdanau.user.dto.CreateUserDto;
+import com.bahdanau.user.entity.Macros;
 import com.bahdanau.user.entity.User;
 import com.bahdanau.user.service.UserService;
 import com.mongodb.MongoWriteException;
@@ -43,10 +44,16 @@ public class UserController {
         userService.deleteUser(username);
     }
 
-    @GetMapping("/{filterWord}/username")
-    public List<User> getUsernames(@PathVariable String filterWord) {
-        logger.info("retrieving filtered usernames. Filter - " + filterWord);
-        return userService.getFilteredUsernames(filterWord);
+    @GetMapping("/username/{username}")
+    public List<User> getUsersByUsername(@PathVariable String username) {
+        logger.info("retrieving filtered usernames. Filter - " + username);
+        return userService.getFilteredByUsername(username);
+    }
+
+    @GetMapping("/id/{userId}")
+    public Macros getUserMacrosByEmail(@PathVariable String userId) {
+        logger.info("retrieving filtered id. Filter - " + userId);
+        return userService.getUSerMacrosByUserId(userId);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

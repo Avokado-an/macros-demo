@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("/calculate")
+@RequestMapping("/calculate-person")
 @RequiredArgsConstructor
 public class PersonMacrosCalculationController {
     private final Logger logger = Logger.getLogger(PersonMacrosCalculationController.class.getName());

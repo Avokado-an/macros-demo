@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("/calculate")
+@RequestMapping("/calculate-dish")
 @RequiredArgsConstructor
 public class DishMacrosCalculationController {
     private final Logger logger = Logger.getLogger(DishMacrosCalculationController.class.getName());

@@ -1,6 +1,8 @@
 package com.bahdanau.food.dto;
 
+import com.bahdanau.food.entity.FoodCategory;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
@@ -8,14 +10,19 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class FoodDto {
     private String id;
+
+    @NotBlank
+    private String userId;
     @NotBlank
     private String name;
-    @NotBlank
+    @NotNull
     private Integer calories;
-    @NotBlank
+    @NotNull
     private Integer fats;
-    @NotBlank
+    @NotNull
     private Integer carbs;
-    @NotBlank
+    @NotNull
     private Integer proteins;
+    @NotNull
+    private FoodCategory foodCategory;
 }

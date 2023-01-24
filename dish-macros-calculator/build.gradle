@@ -21,6 +21,9 @@ dependencyManagement {
 }
 
 dependencies {
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.0.0'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '4.0.0'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bootstrap', version: '4.0.0'
     implementation 'org.springframework.boot:spring-boot-starter-validation:3.0.0'
     implementation 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
@@ -28,6 +31,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
     implementation 'com.google.code.gson:gson:2.10'
     implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.2'
+    testImplementation "com.github.tomakehurst:wiremock-jre8:2.35.0"
 }
 
 test {

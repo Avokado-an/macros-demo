@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dish-server
+  cloud:
+    config:
+      uri: http://localhost:8888

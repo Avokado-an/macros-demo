@@ -15,16 +15,16 @@ public class FoodService {
     private final ModelMapper modelMapper;
     private final FoodRepository foodRepository;
 
-    public List<Food> getAllFood() {
-        return foodRepository.findAll();
+    public List<Food> getAllFood(String userId) {
+        return foodRepository.findAllByUserId(userId);
     }
 
-    public List<Food> getFoodByCategory(String foodCategory) {
-        return foodRepository.findAllByFoodCategory(foodCategory);
+    public List<Food> getFoodByCategory(String foodCategory, String userId) {
+        return foodRepository.findAllByFoodCategoryAndUserId(foodCategory.toUpperCase(), userId);
     }
 
-    public List<Food> getAllByName(String name) {
-        return foodRepository.findAllByNameContaining(name);
+    public List<Food> getAllByName(String name, String userId) {
+        return foodRepository.findAllByNameContainingAndUserId(name, userId);
     }
 
     public Food addFoodItem(FoodDto foodDto) {

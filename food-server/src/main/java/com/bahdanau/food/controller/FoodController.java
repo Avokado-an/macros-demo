@@ -22,28 +22,28 @@ public class FoodController {
     private final Logger logger = Logger.getLogger(FoodController.class.getName());
     private final FoodService foodService;
 
-    @GetMapping
-    public List<Food> getAllFood() {
+    @GetMapping("/{userId}")
+    public List<Food> getAllFood(@PathVariable String userId) {
         logger.info("retrieving all food items");
-        return foodService.getAllFood();
+        return foodService.getAllFood(userId);
     }
 
-    @GetMapping("/category/{categoryName}")
-    public List<Food> getFoodByCategory(@PathVariable String categoryName) {
+    @GetMapping("/category/{categoryName}/{userId}")
+    public List<Food> getFoodByCategory(@PathVariable String categoryName, @PathVariable String userId) {
         logger.info("retrieving food items of group - " + categoryName);
-        return foodService.getFoodByCategory(categoryName);
+        return foodService.getFoodByCategory(categoryName, userId);
     }
 
-    @GetMapping("/{foodName}")
-    public List<Food> getFoodByName(@PathVariable String foodName) {
+    @GetMapping("/{foodName}/{userId}")
+    public List<Food> getFoodByName(@PathVariable String foodName, @PathVariable String userId) {
         logger.info("retrieving food items with name containing - " + foodName);
-        return foodService.getAllByName(foodName);
+        return foodService.getAllByName(foodName, userId);
     }
 
     @PutMapping
-    public List<Food> updateFoodItem(@Valid FoodDto updatedFoodItem) {
+    public Food updateFoodItem(@RequestBody @Valid FoodDto updatedFoodItem) {
         logger.info("updating food item - " + updatedFoodItem.toString());
-        return foodService.getAllFood();
+        return foodService.updateFoodItem(updatedFoodItem);
     }
 
     @DeleteMapping("/{id}")
@@ -53,7 +53,7 @@ public class FoodController {
     }
 
     @PostMapping
-    public Food createFoodItem(@Valid FoodDto newFoodItem) {
+    public Food createFoodItem(@RequestBody @Valid FoodDto newFoodItem) {
         logger.info("creating food item - " + newFoodItem.toString());
         return foodService.addFoodItem(newFoodItem);
     }

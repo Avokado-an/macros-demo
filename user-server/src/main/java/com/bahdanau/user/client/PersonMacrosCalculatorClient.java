@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "person-macros-calculation-server",
         fallback = PersonMacrosCalculatorClientFallback.class)
 public interface PersonMacrosCalculatorClient {
-    @RequestMapping(method = RequestMethod.POST, value = "/calculate")
+    @RequestMapping(method = RequestMethod.POST, value = "/calculate-person")
     Macros getMacrosForPerson(@RequestBody UserParametersDto userParametersDto);
 }

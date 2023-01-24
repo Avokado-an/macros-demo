@@ -1,7 +1,6 @@
 package com.bahdanau.dish.dto;
 
 import com.bahdanau.dish.entity.CookingMethod;
-import com.bahdanau.dish.entity.CookingStep;
 import com.bahdanau.dish.entity.FoodItem;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -17,9 +16,8 @@ public class DishDto {
     @NotBlank
     private String name;
     @NotEmpty
-    private List<CookingStep> cookingSteps;
-    @NotEmpty
     private List<FoodItem> ingredients;
-    private String creatorId; //implement later
+    @NotBlank
+    private String userId;
     private CookingMethod cookingMethod;
 }

@@ -11,6 +11,6 @@ import java.util.List;
 
 @FeignClient(name = "dish-macros-calculation-server", fallback = DishMacrosCalculatorClientFallback.class)
 public interface DishMacrosCalculatorClient {
-    @RequestMapping(method = RequestMethod.POST, value = "/calculate")
+    @RequestMapping(method = RequestMethod.POST, value = "/calculate-dish")
     Macros getMacrosForDish(@RequestBody List<FoodItem> ingredients);
 }

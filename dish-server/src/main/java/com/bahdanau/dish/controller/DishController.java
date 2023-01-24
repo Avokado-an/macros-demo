@@ -24,32 +24,33 @@ public class DishController {
     private final Logger logger = Logger.getLogger(DishController.class.getName());
     private final DishService dishService;
 
-    @GetMapping
-    public List<Dish> getAllDishes() {
+    @GetMapping("/{userId}")
+    public List<Dish> getAllDishes(@PathVariable String userId) {
         logger.info("retrieving all food items");
-        return dishService.getAllDishes();
+        return dishService.getAllDishes(userId);
     }
 
-    @GetMapping("/category/{cookingMethod}")
-    public List<Dish> getDishByCookingMethod(@PathVariable String cookingMethod) {
+    @GetMapping("/{userId}/category/{cookingMethod}")
+    public List<Dish> getDishByCookingMethod(@PathVariable String userId, @PathVariable String cookingMethod) {
         logger.info("retrieving dishes of cooking method - " + cookingMethod);
-        return dishService.getDishesByCookingMethod(cookingMethod);
+        return dishService.getDishesByCookingMethod(cookingMethod, userId);
     }
 
-    @GetMapping("/{dishName}")
-    public List<Dish> getDishByName(@PathVariable String dishName) {
+    @GetMapping("/{userId}/{dishName}")
+    public List<Dish> getDishByName(@PathVariable String userId, @PathVariable String dishName) {
         logger.info("retrieving dishes with name containing - " + dishName);
-        return dishService.getDishesByName(dishName);
+        return dishService.getDishesByName(dishName, userId);
     }
 
-    @GetMapping("/ingredient/")
-    public List<Dish> getDishByIngredients(@RequestParam(value = "ingredient") List<String> ingredientsNames) {
+    @GetMapping("/{userId}/ingredient")
+    public List<Dish> getDishByIngredients(@PathVariable String userId,
+                                           @RequestParam(value = "ingredients") List<String> ingredientsNames) {
         logger.info("retrieving dishes which contain - " + ingredientsNames);
-        return dishService.getDishesByIngredient(ingredientsNames);
+        return dishService.getDishesByIngredient(ingredientsNames, userId);
     }
 
     @PutMapping
-    public Dish updateDish(@RequestBody @Valid DishDto updatedFoodItem) throws IllegalAccessException {
+    public Dish updateDish(@RequestBody @Valid DishDto updatedFoodItem) {
         logger.info("updating food item - " + updatedFoodItem.toString());
         return dishService.updateDish(updatedFoodItem);
     }
@@ -61,7 +62,7 @@ public class DishController {
     }
 
     @PostMapping
-    public Dish createDish(@RequestBody @Valid DishDto newDishItem) throws IllegalAccessException {
+    public Dish createDish(@RequestBody @Valid DishDto newDishItem) {
         logger.info("creating food item - " + newDishItem.toString());
         return dishService.addDishItem(newDishItem);
     }

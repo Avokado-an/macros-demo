@@ -19,8 +19,12 @@ public class UserService {
     private final UserRepository userRepository;
     private final PersonMacrosCalculatorClient personMacrosCalculatorClient;
 
-    public List<User> getFilteredUsernames(String filterWord) {
-        return userRepository.findAllByUsernameContaining(filterWord);
+    public List<User> getFilteredByUsername(String filterWord) {
+        return userRepository.findAllByUsernameContainingIgnoreCase(filterWord);
+    }
+
+    public Macros getUSerMacrosByUserId(String userId) {
+        return userRepository.findById(userId).orElseThrow(RuntimeException::new).getMacros();
     }
 
     public List<User> getUsers() {
