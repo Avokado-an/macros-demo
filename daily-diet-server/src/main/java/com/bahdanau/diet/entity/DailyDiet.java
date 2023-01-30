@@ -18,7 +18,7 @@ public class DailyDiet {
     @Id
     private String id;
     private LocalDate documentedDate;
-    private String userId;
+    private String userEmail;
     private List<DishDto> dishesForDay;
     private MacrosDto macrosDtoForFullDay;
 }

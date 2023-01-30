@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -24,47 +25,47 @@ public class DishController {
     private final Logger logger = Logger.getLogger(DishController.class.getName());
     private final DishService dishService;
 
-    @GetMapping("/{userId}")
-    public List<Dish> getAllDishes(@PathVariable String userId) {
-        logger.info("retrieving all food items");
-        return dishService.getAllDishes(userId);
+    @GetMapping()
+    public List<Dish> getAllDishes(JwtAuthenticationToken auth) {
+        logger.info("retrieving all food items for user - " + getEmailFromToken(auth));
+        return dishService.getAllDishes(getEmailFromToken(auth));
     }
 
-    @GetMapping("/{userId}/category/{cookingMethod}")
-    public List<Dish> getDishByCookingMethod(@PathVariable String userId, @PathVariable String cookingMethod) {
+    @GetMapping("/category/{cookingMethod}")
+    public List<Dish> getDishByCookingMethod(JwtAuthenticationToken auth, @PathVariable String cookingMethod) {
         logger.info("retrieving dishes of cooking method - " + cookingMethod);
-        return dishService.getDishesByCookingMethod(cookingMethod, userId);
+        return dishService.getDishesByCookingMethod(cookingMethod, getEmailFromToken(auth));
     }
 
-    @GetMapping("/{userId}/{dishName}")
-    public List<Dish> getDishByName(@PathVariable String userId, @PathVariable String dishName) {
+    @GetMapping("{dishName}")
+    public List<Dish> getDishByName(JwtAuthenticationToken auth, @PathVariable String dishName) {
         logger.info("retrieving dishes with name containing - " + dishName);
-        return dishService.getDishesByName(dishName, userId);
+        return dishService.getDishesByName(dishName, getEmailFromToken(auth));
     }
 
-    @GetMapping("/{userId}/ingredient")
-    public List<Dish> getDishByIngredients(@PathVariable String userId,
+    @GetMapping("ingredient")
+    public List<Dish> getDishByIngredients(JwtAuthenticationToken auth,
                                            @RequestParam(value = "ingredients") List<String> ingredientsNames) {
         logger.info("retrieving dishes which contain - " + ingredientsNames);
-        return dishService.getDishesByIngredient(ingredientsNames, userId);
+        return dishService.getDishesByIngredient(ingredientsNames, getEmailFromToken(auth));
     }
 
     @PutMapping
-    public Dish updateDish(@RequestBody @Valid DishDto updatedFoodItem) {
+    public Dish updateDish(JwtAuthenticationToken auth, @RequestBody @Valid DishDto updatedFoodItem) throws IllegalAccessException {
         logger.info("updating food item - " + updatedFoodItem.toString());
-        return dishService.updateDish(updatedFoodItem);
+        return dishService.updateDish(updatedFoodItem, getEmailFromToken(auth));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDish(@PathVariable String id) throws IllegalAccessException {
+    public void deleteDish(JwtAuthenticationToken auth, @PathVariable String id) throws IllegalAccessException {
         logger.info("deleting food item with id - " + id);
-        dishService.removeDishItem(id);
+        dishService.removeDishItem(id, getEmailFromToken(auth));
     }
 
     @PostMapping
-    public Dish createDish(@RequestBody @Valid DishDto newDishItem) {
+    public Dish createDish(JwtAuthenticationToken auth, @RequestBody @Valid DishDto newDishItem) {
         logger.info("creating food item - " + newDishItem.toString());
-        return dishService.addDishItem(newDishItem);
+        return dishService.addDishItem(newDishItem, getEmailFromToken(auth));
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -86,5 +87,9 @@ public class DishController {
         logger.warning("received illegal access exception on request - " + ex.getMessage());
         logger.warning("received illegal access exception on request - " + Arrays.toString(ex.getStackTrace()));
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    private String getEmailFromToken(JwtAuthenticationToken auth) {
+        return (String) auth.getToken().getClaims().get("email");
     }
 }

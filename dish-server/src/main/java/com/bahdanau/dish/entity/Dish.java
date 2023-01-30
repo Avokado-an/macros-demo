@@ -14,7 +14,7 @@ public class Dish {
 
     private String name;
 
-    private String userId;
+    private String userEmail;
     private List<FoodItem> ingredients;
     private CookingMethod cookingMethod;
     private Macros macros;

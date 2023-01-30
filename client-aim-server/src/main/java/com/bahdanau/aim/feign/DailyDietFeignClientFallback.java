@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class DailyDietFeignClientFallback implements DailyDietFeignClient {
     @Override
-    public List<DailyMacrosDto> getDishesMacrosForPeriod(String userId, LocalDate startDate, LocalDate endDate) {
+    public List<DailyMacrosDto> getDishesMacrosForPeriod(LocalDate startDate, LocalDate endDate) {
         return new ArrayList<>();
     }
 }

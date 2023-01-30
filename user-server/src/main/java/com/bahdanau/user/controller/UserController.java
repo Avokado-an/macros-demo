@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,11 @@ public class UserController {
         return userService.getUsers();
     }
 
+    @GetMapping("/current")
+    public User getUser(JwtAuthenticationToken auth) {
+        return userService.getUserByEmail(getEmailFromToken(auth));
+    }
+
     @PostMapping
     public User addUser(@Valid @RequestBody CreateUserDto newUser) {
         logger.info("adding user");
@@ -50,10 +56,10 @@ public class UserController {
         return userService.getFilteredByUsername(username);
     }
 
-    @GetMapping("/id/{userId}")
-    public Macros getUserMacrosByEmail(@PathVariable String userId) {
-        logger.info("retrieving filtered id. Filter - " + userId);
-        return userService.getUSerMacrosByUserId(userId);
+    @GetMapping("/macros")
+    public Macros getUserMacrosByEmail(JwtAuthenticationToken auth) {
+        logger.info("retrieving filtered id. Filter - " + getEmailFromToken(auth));
+        return userService.getUSerMacrosByUserEmail(getEmailFromToken(auth));
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -75,5 +81,9 @@ public class UserController {
         logger.warning("mongodb write exception message - " + ex.getMessage());
         logger.warning("mongodb write exception stacktrace - " + Arrays.toString(ex.getStackTrace()));
         return new ResponseEntity<>("This email is already taken, try another one", HttpStatus.BAD_REQUEST);
+    }
+
+    private String getEmailFromToken(JwtAuthenticationToken auth) {
+        return (String) auth.getToken().getClaims().get("email");
     }
 }

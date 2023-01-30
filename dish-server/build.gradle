@@ -21,6 +21,7 @@ dependencyManagement {
 }
 
 dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-resource-server', version: '3.0.0'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '4.0.0'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bootstrap', version: '4.0.0'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-netflix-hystrix-stream', version: '2.2.10.RELEASE'

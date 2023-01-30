@@ -14,5 +14,5 @@ public class ClientMonthlyResultDto {
     private MacrosDto totalMonthlyDifference;
     private float weightTotalDifference;
     private MacrosDto clientMacrosForTheDay;
-    private String userId;
+    private String userEmail;
 }

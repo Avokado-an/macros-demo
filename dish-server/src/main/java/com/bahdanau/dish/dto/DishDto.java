@@ -17,7 +17,5 @@ public class DishDto {
     private String name;
     @NotEmpty
     private List<FoodItem> ingredients;
-    @NotBlank
-    private String userId;
     private CookingMethod cookingMethod;
 }

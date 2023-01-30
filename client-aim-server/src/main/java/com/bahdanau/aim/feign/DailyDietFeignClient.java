@@ -12,8 +12,7 @@ import java.util.List;
 
 @FeignClient(name = "daily-diet-server", fallback = DailyDietFeignClientFallback.class)
 public interface DailyDietFeignClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/daily-diet/{userId}/{startDate}/{endDate}/macros")
-    List<DailyMacrosDto> getDishesMacrosForPeriod(@PathVariable("userId") String userId,
-                                                  @PathVariable("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+    @RequestMapping(method = RequestMethod.GET, value = "/daily-diet/{startDate}/{endDate}/macros")
+    List<DailyMacrosDto> getDishesMacrosForPeriod(@PathVariable("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
                                                   @PathVariable("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate);
 }

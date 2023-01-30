@@ -6,6 +6,7 @@ import com.bahdanau.aim.dto.DailyResultDto;
 import com.bahdanau.aim.dto.MacrosDto;
 import com.bahdanau.aim.feign.DailyDietFeignClient;
 import com.bahdanau.aim.feign.UserFeignClient;
+import com.bahdanau.aim.config.BearerAuthFeignConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,27 +23,27 @@ public class ClientAimService {
     private final DailyDietFeignClient dietFeignClient;
     private final UserFeignClient userFeignClient;
 
-    public ClientMonthlyResultDto getClientResultsForMonth(String userId, LocalDate date) {
+    public ClientMonthlyResultDto getClientResultsForMonth(String userEmail, LocalDate date) {
         LocalDate startDate = date.with(firstDayOfMonth());
         LocalDate endDate = date.with(lastDayOfMonth());
 
-        MacrosDto userMacros = getClientAimedMacros(userId);
-        List<DailyResultDto> dailyResults = getDailyResults(userId, startDate, endDate, userMacros);
+        MacrosDto userMacros = getClientAimedMacros();
+        List<DailyResultDto> dailyResults = getDailyResults(startDate, endDate, userMacros);
         MacrosDto totalMonthlyDifference = calculateTotalMonthlyMacros(dailyResults);
         float totalWeightDifference = calculateWeightFromCalories(totalMonthlyDifference.getCalories());
 
         return ClientMonthlyResultDto.builder()
                 .clientMacrosForTheDay(userMacros)
                 .startDate(startDate)
-                .userId(userId)
+                .userEmail(userEmail)
                 .dailyResults(dailyResults)
                 .weightTotalDifference(totalWeightDifference)
                 .totalMonthlyDifference(totalMonthlyDifference)
                 .build();
     }
 
-    private List<DailyResultDto> getDailyResults(String userId, LocalDate startDate, LocalDate endDate, MacrosDto userAimedMacros) {
-        List<DailyMacrosDto> macrosForMonth = dietFeignClient.getDishesMacrosForPeriod(userId, startDate, endDate);
+    private List<DailyResultDto> getDailyResults(LocalDate startDate, LocalDate endDate, MacrosDto userAimedMacros) {
+        List<DailyMacrosDto> macrosForMonth = dietFeignClient.getDishesMacrosForPeriod(startDate, endDate);
         return macrosForMonth.stream()
                 .map(macrosForDay -> DailyResultDto.builder()
                         .macrosDifferenceFromExpected(calculateMacrosDifference(userAimedMacros, macrosForDay.getMacrosDto()))
@@ -82,7 +83,7 @@ public class ClientAimService {
                 .build();
     }
 
-    private MacrosDto getClientAimedMacros(String userId) {
-        return userFeignClient.getUserAimMacros(userId);
+    private MacrosDto getClientAimedMacros() {
+        return userFeignClient.getUserAimMacros();
     }
 }

@@ -10,9 +10,6 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class FoodDto {
     private String id;
-
-    @NotBlank
-    private String userId;
     @NotBlank
     private String name;
     @NotNull

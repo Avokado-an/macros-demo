@@ -17,5 +17,5 @@ public class Food {
     private Integer proteins;
     private FoodCategory foodCategory;
 
-    private String userId;
+    private String userEmail;
 }

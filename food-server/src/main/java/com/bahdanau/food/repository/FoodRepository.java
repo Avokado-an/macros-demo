@@ -6,9 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 public interface FoodRepository extends MongoRepository<Food, String> {
-    List<Food> findAllByUserId(String userId);
+    List<Food> findAllByUserEmail(String userEmail);
 
-    List<Food> findAllByFoodCategoryAndUserId(String foodCategory, String userId);
+    List<Food> findAllByFoodCategoryAndUserEmail(String foodCategory, String userEmail);
 
-    List<Food> findAllByNameContainingAndUserId(String foodCategory, String userId);
+    List<Food> findAllByNameContainingAndUserEmail(String foodCategory, String userEmail);
 }

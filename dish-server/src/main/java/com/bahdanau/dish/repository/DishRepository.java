@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface DishRepository extends MongoRepository<Dish, String> {
 
-    List<Dish> findAllByUserId(String userId);
+    List<Dish> findAllByUserEmail(String userEmail);
 
-    List<Dish> findAllByCookingMethodAndUserId(String cookingMethod, String userId);
+    List<Dish> findAllByCookingMethodAndUserEmail(String cookingMethod, String userEmail);
 
-    List<Dish> findAllByNameContainingIgnoreCaseAndUserId(String name, String userId);
+    List<Dish> findAllByNameContainingIgnoreCaseAndUserEmail(String name, String userEmail);
 
-    @org.springframework.data.mongodb.repository.Query("{ 'ingredients.name' : { $all : ?0}, 'userId' :  {$eq :  ?1}}")
-    List<Dish> findAllContainingIngredients(List<String> ingredientName, String userId);
+    @org.springframework.data.mongodb.repository.Query("{ 'ingredients.name' : { $all : ?0}, 'userEmail' :  {$eq :  ?1}}")
+    List<Dish> findAllContainingIngredients(List<String> ingredientName, String userEmail);
 }

@@ -19,12 +19,16 @@ public class UserService {
     private final UserRepository userRepository;
     private final PersonMacrosCalculatorClient personMacrosCalculatorClient;
 
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(RuntimeException::new);
+    }
+
     public List<User> getFilteredByUsername(String filterWord) {
         return userRepository.findAllByUsernameContainingIgnoreCase(filterWord);
     }
 
-    public Macros getUSerMacrosByUserId(String userId) {
-        return userRepository.findById(userId).orElseThrow(RuntimeException::new).getMacros();
+    public Macros getUSerMacrosByUserEmail(String userEmail) {
+        return userRepository.findByEmail(userEmail).orElseThrow(RuntimeException::new).getMacros();
     }
 
     public List<User> getUsers() {
