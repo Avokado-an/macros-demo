@@ -1,0 +1,28 @@
+.flex {
+    display: flex;
+}
+
+.m-left-60 {
+    margin-left: 60px;
+}
+
+.m-top-60 {
+    margin-top: 60px;
+}
+
+.size-400-400 {
+    width: 400px;
+    height: 400px;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.width-200 {
+    width: 200px;
+}
+
+.width-400 {
+    width: 400px;
+}
