@@ -1,5 +1,5 @@
 import React from 'react';
-import { MacrosStatistics } from '../common/entity-item/MacrosStatistics';
+import { MacrosStatisticsVertical } from '../common/entity-item/MacrosStatistics';
 import { UserData } from '../common/entity-item/UserData';
 import SideBar from '../common/navigation/SideBar';
 import '../common/style/common-styles.css'
@@ -25,7 +25,7 @@ export const CurrentUserProfile = () => {
             <SideBar />
             <div className='flex m-top-60 m-left-60'>
                 <UserData userData={userData}/>
-                <div className='m-left-60'><MacrosStatistics macros={macros}/></div>
+                <div className='m-left-60'><MacrosStatisticsVertical macros={macros}/></div>
             </div>
         </div>
     )

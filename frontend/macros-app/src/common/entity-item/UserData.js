@@ -1,12 +1,12 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../style/common-styles.css'
+import { EditPersonalDataModal } from '../modal/EditPersonalData';
 
 export const UserData = ({ userData }) => {
     return (
         <Card className='width-400'>
-            <Card.Img className="size-400-400" variant="top" src="logo192.png" />
+            <Card.Img className="height-400" variant="top" src="logo192.png" />
             <Card.Body>
                 <Card.Title>{userData.name}</Card.Title>
                 <Card.Text>
@@ -17,7 +17,7 @@ export const UserData = ({ userData }) => {
                         <ListGroup.Item>{userData.aimWeight} kg</ListGroup.Item>
                     </ListGroup>
                 </Card.Text>
-                <Button variant="dark">Edit</Button>
+                <EditPersonalDataModal initialData={userData}/>
             </Card.Body>
         </Card>
     )
