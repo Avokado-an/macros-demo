@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+/frontend/node_modules/
+/logstash/
+/keycloak-config/
+/.local/
+/database/
