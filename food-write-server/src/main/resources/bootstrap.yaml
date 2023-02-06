@@ -1,6 +1,6 @@
 spring:
   application:
-    name: food-read-server
+    name: food-write-server
   cloud:
     config:
       uri: http://localhost:8888

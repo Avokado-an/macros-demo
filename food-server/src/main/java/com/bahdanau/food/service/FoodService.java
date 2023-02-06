@@ -33,21 +33,13 @@ public class FoodService {
         return foodRepository.insert(foodItem);
     }
 
-    public Food updateFoodItem(FoodDto foodDto, String userEmail) throws IllegalAccessException {
-        boolean foodItemOwnedByAnotherUser = foodRepository.findById(foodDto.getId()).stream()
-                .noneMatch(food -> food.getUserEmail().equals(userEmail));
-        if(foodItemOwnedByAnotherUser) {
-            throw new IllegalAccessException("This food item is attached to another user!");
-        }
-        return foodRepository.save(modelMapper.map(foodDto, Food.class));
+    public Food updateFoodItem(FoodDto foodDto, String userEmail) {
+        Food updatedFoodItem = modelMapper.map(foodDto, Food.class);
+        updatedFoodItem.setUserEmail(userEmail);
+        return foodRepository.save(updatedFoodItem);
     }
 
-    public void removeFoodItem(String id, String userEmail) throws IllegalAccessException {
-        boolean foodItemOwnedByAnotherUser = foodRepository.findById(id).stream()
-                .noneMatch(food -> food.getUserEmail().equals(userEmail));
-        if(foodItemOwnedByAnotherUser) {
-            throw new IllegalAccessException("This food item is attached to another user!");
-        }
-        foodRepository.deleteById(id);
+    public void removeFoodItem(FoodDto foodDto) {
+        foodRepository.deleteById(foodDto.getId());
     }
 }

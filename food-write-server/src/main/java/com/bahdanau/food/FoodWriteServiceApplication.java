@@ -9,11 +9,10 @@ import org.springframework.context.annotation.Bean;
 // All food details are specified as 100g portions, keep it in mind while calculating
 @SpringBootApplication
 @EnableDiscoveryClient
-public class FoodServiceApplication {
+public class FoodWriteServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FoodServiceApplication.class, args);
+        SpringApplication.run(FoodWriteServiceApplication.class, args);
     }
-
     @Bean
     public ModelMapper getModelMapper() {
         return new ModelMapper();

@@ -15,4 +15,5 @@ include 'person-macros-calculation-server'
 include 'daily-macros-caclulator'
 include 'dish-macros-calculator'
 include 'daily-diet-server'
+include 'food-write-server'
 

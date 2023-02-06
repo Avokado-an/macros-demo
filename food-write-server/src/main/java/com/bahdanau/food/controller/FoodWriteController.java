@@ -2,7 +2,7 @@ package com.bahdanau.food.controller;
 
 import com.bahdanau.food.dto.FoodDto;
 import com.bahdanau.food.entity.Food;
-import com.bahdanau.food.service.FoodService;
+import com.bahdanau.food.service.FoodWriteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,34 +14,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("food")
+@RequestMapping("food/write")
 @RequiredArgsConstructor
-public class FoodController {
-    private final Logger logger = Logger.getLogger(FoodController.class.getName());
-    private final FoodService foodService;
-
-    @GetMapping
-    public List<Food> getAllFood(JwtAuthenticationToken auth) {
-        logger.info("retrieving all food items");
-        return foodService.getAllFood(getEmailFromToken(auth));
-    }
-
-    @GetMapping("/category/{categoryName}")
-    public List<Food> getFoodByCategory(@PathVariable String categoryName, JwtAuthenticationToken auth) {
-        logger.info("retrieving food items of group - " + categoryName);
-        return foodService.getFoodByCategory(categoryName, getEmailFromToken(auth));
-    }
-
-    @GetMapping("/{foodName}")
-    public List<Food> getFoodByName(@PathVariable String foodName, JwtAuthenticationToken auth) {
-        logger.info("retrieving food items with name containing - " + foodName);
-        return foodService.getAllByName(foodName, getEmailFromToken(auth));
-    }
+public class FoodWriteController {
+    private final Logger logger = Logger.getLogger(FoodWriteController.class.getName());
+    private final FoodWriteService foodService;
 
     @PutMapping
     public Food updateFoodItem(@RequestBody @Valid FoodDto updatedFoodItem, JwtAuthenticationToken auth) throws IllegalAccessException {
