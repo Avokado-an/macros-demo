@@ -1,0 +1,2386 @@
+{
+	"info": {
+		"_postman_id": "40315b30-437b-458f-86bc-addd95c6e097",
+		"name": "macros-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13719376"
+	},
+	"item": [
+		{
+			"name": "food",
+			"item": [
+				{
+					"name": "get all food",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/food/read",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find food by name",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/food/read/chicken",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"read",
+								"chicken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find food by category",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/food/read/category/meat",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"read",
+								"category",
+								"meat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add food item",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"chicken breast test\",\r\n    \"calories\": 100,\r\n    \"fats\": 2,\r\n    \"carbs\": 0,\r\n    \"proteins\": 20,\r\n    \"foodCategory\": \"MEAT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/food/write",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"write"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete food item",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/food/write/63dd0dcbe5ea3a240d8098a8",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"write",
+								"63dd0dcbe5ea3a240d8098a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit food item",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63dd0fd109742e570a34dc8a\",\r\n    \"name\": \"chicken breast updated\",\r\n    \"calories\": 100,\r\n    \"fats\": 2,\r\n    \"carbs\": 0,\r\n    \"proteins\": 20,\r\n    \"foodCategory\": \"MEAT\",\r\n    \"userEmail\": \"prokotlet@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/food/write",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"food",
+								"write"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dish",
+			"item": [
+				{
+					"name": "get all dishes",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/dish",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dishes by cooking method",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/dish/category/fried",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish",
+								"category",
+								"fried"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dish by name",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/dish/Sand",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish",
+								"Sand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dish by ingredient",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/dish/ingredient?ingredients=Paprika,chicken breast",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish",
+								"ingredient"
+							],
+							"query": [
+								{
+									"key": "ingredients",
+									"value": "Paprika,chicken breast"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit dish",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63d3b186c3a6b4032260a5ef\",\r\n    \"name\": \"Sandwich\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"chicken breast\",\r\n            \"calories\": 140,\r\n            \"fats\": 2,\r\n            \"carbs\": 0,\r\n            \"proteins\": 22,\r\n            \"foodCategory\": \"MEAT\",\r\n            \"weight\": 100.0\r\n        },\r\n        {\r\n            \"name\": \"Bread\",\r\n            \"calories\": 360,\r\n            \"fats\": 5,\r\n            \"carbs\": 60,\r\n            \"proteins\": 11,\r\n            \"foodCategory\": \"PASTRY\",\r\n            \"weight\": 100.0\r\n        },\r\n        {\r\n            \"name\": \"Black Pepper\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        },\r\n        {\r\n            \"name\": \"Paprika\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        },\r\n        {\r\n            \"name\": \"Dried Garlik\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        }\r\n    ],\r\n    \"cookingMethod\": \"FRIED\",\r\n    \"macros\": {\r\n        \"calories\": 474,\r\n        \"fats\": 6,\r\n        \"carbs\": 60,\r\n        \"proteins\": 31\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/dish",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete dish",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/dish/63bd6d8914268431ed7d8431",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish",
+								"63bd6d8914268431ed7d8431"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sandwich\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"chicken breast\",\r\n            \"calories\": 110,\r\n            \"fats\": 1,\r\n            \"carbs\": 0,\r\n            \"proteins\": 20,\r\n            \"foodCategory\": \"MEAT\",\r\n            \"weight\": 100\r\n        }, \r\n        {\r\n            \"name\": \"Bread\",\r\n            \"calories\": 360,\r\n            \"fats\": 5,\r\n            \"carbs\": 60,\r\n            \"proteins\": 11,\r\n            \"foodCategory\": \"PASTRY\",\r\n            \"weight\": 100\r\n        },\r\n        {\r\n            \"name\": \"Black Pepper\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5\r\n        },\r\n        {\r\n            \"name\": \"Paprika\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5\r\n        },\r\n        {\r\n            \"name\": \"Dried Garlik\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 4,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5\r\n        }\r\n    ],\r\n    \"cookingMethod\": \"FRIED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/dish",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"dish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNbS1VY2dUQ1NnVzB0LTF1MVR3cXo3QjVTMnJ4UFp5bWdKbmNQWE82Nzk0In0.eyJleHAiOjE2NzQ1NjQzODEsImlhdCI6MTY3NDU2NDA4MSwianRpIjoiZDE3NTg5M2EtNjIxMy00OWRkLWFhNjEtZmI5MjZlZmNjM2E5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDcwL3JlYWxtcy9tYWNyb3MtcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNGQ2NWMxNDEtOGRiNC00MzE4LWE0NjQtYTExMDQxZjdmZjU0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWFjcm9zLWdhdGV3YXktY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjM2MzFmMmM4LTgyYTctNGZiZS1iMGRlLTMxZjg1MDg0MjJjMCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1tYWNyb3MtcmVhbG0iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjM2MzFmMmM4LTgyYTctNGZiZS1iMGRlLTMxZjg1MDg0MjJjMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2FzaGEiLCJlbWFpbCI6InByb2tvdGxldDFAZ21haWwuY28ifQ.UNvrALHAQQo_atKoFsnTrRsLZf7CdVuMle3eretEtrrxSZ1R_zi9MeyV59Hk3DHarUE3gMsva8M9DV16AOl6uj4GOzVswlTHDG3aEm4fIX65I4VP5bRnv5la-eaUKDXw3QzBoJpZCtu5YkwLCyZ-exuWw4JHwPCKXezIQyOz2f88XL9ks5hw3YrGivNUhPnZl82UrBaWbwG2Lt3g9h_QzBgsV57SZt_5LyZ-ZB0bb-PM85A5QHeS63Dn7aTukXqaTK-_Z9rfa836TI-71qQ4wPTpiX_sZvPVroXmVC8YN6A6GwUUkgrmDR_bVieh_ARYmEY53na3G2Bh5K_k9oyFbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{gateway}}/users",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users by username",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/users/username/sas",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users",
+								"username",
+								"sas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/users/63bd704e69dd0950c4c6c6f5",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users",
+								"63bd704e69dd0950c4c6c6f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63ca75da8341737e860414b8\",\r\n    \"gender\": \"MALE\",\r\n    \"weight\": \"90\",\r\n    \"activityType\": \"PRO_SPORTS_ACTIVITY\",\r\n    \"aimType\": \"LOSE_WEIGHT\",\r\n    \"email\": \"prokotlet@gmail.com\",\r\n    \"age\": 30,\r\n    \"username\": \"Sasha\",\r\n    \"height\": 170\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/users",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get current user",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/users/current",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get current user macros",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/users/macros",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"users",
+								"macros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "montly aim",
+			"item": [
+				{
+					"name": "get results for month",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/monthly-aim/2022-01-10",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"monthly-aim",
+								"2022-01-10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "daily diet",
+			"item": [
+				{
+					"name": "get diet for the day",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2022-01-01",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2022-01-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create empty diet for the day",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2022-01-31",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2022-01-31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete diet for the day",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/63bd707d69dd0950c4c6c6f6/2022-01-01",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"63bd707d69dd0950c4c6c6f6",
+								"2022-01-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish to the day",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63d3b806d5761b2390570a47\",\r\n    \"name\": \"Roasted chicken breast\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"test\",\r\n            \"calories\": 250,\r\n            \"fats\": 10,\r\n            \"carbs\": 0,\r\n            \"proteins\": 30,\r\n            \"foodCategory\": \"MEAT\",\r\n            \"weight\": 50.0\r\n        },\r\n        {\r\n            \"name\": \"Black Pepper\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 10,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        },\r\n        {\r\n            \"name\": \"Paprika\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 10,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        },\r\n        {\r\n            \"name\": \"Dried Garlik\",\r\n            \"calories\": 30,\r\n            \"fats\": 1,\r\n            \"carbs\": 10,\r\n            \"proteins\": 2,\r\n            \"foodCategory\": \"SPECIES\",\r\n            \"weight\": 5.0\r\n        }\r\n    ],\r\n    \"cookingMethod\": \"ROASTED\",\r\n    \"macrosDto\": {\r\n        \"calories\": 300,\r\n        \"fats\": 5,\r\n        \"carbs\": 5,\r\n        \"proteins\": 15\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2022-01-31/add-dish",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2022-01-31",
+								"add-dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove dish from day diet",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2022-01-01/remove-dish/63d3b806d5761b2390570a47",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2022-01-01",
+								"remove-dish",
+								"63d3b806d5761b2390570a47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get macros for the day",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2022-01-01/macros",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2022-01-01",
+								"macros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get macros for period",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "{{keycloak-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{keycloak-username}}",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "{{keycloak-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "{{keycloak-client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{keycloak-token-uri}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8070/realms/macros-realm/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{gateway}}/daily-diet/2021-01-01/2022-01-31/macros",
+							"protocol": "http",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"daily-diet",
+								"2021-01-01",
+								"2022-01-31",
+								"macros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
